@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseReportController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']); /*asi es como se llaman las rutas en laravel 8*/
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class,'index']);
+
+Route::resource('expense_reports', ExpenseReportController::class);
