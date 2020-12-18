@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,13 +14,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test',function(){
-    return view('test',[
-        'title' => 'curso de laravel LUIS'
-    ]);
-});
+// Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']); /*asi es como se llaman las rutas en laravel 8*/
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class,'index']);
